@@ -6,8 +6,8 @@ import Card from './Card';
 import Header from './Header';
 import GoogleMap from './GoogleMap';
 import { easeInOutCubic } from './utils/Easing';
-import image from './../assets/images/location-map.svg';
-import '../assets/scss/app.scss';
+import image from '../../assets/images/location-map.svg';
+import '../../assets/scss/app.scss';
 
 class App extends React.Component {
 	constructor(props) {
@@ -87,9 +87,9 @@ class App extends React.Component {
 			priceTo !== '1000001' ||
 			filterSort !== 'any';
 
-		const getFilteredProperties = properties => {
+		const getFilteredProperties = propertiesArg => {
 			const filteredProperties = [];
-			properties.map(property => {
+			propertiesArg.map(property => {
 				const { bedrooms, bathrooms, carSpaces, price } = property;
 				const match =
 					(bedrooms === parseInt(filterBedrooms) || filterBedrooms === 'any') &&
@@ -106,7 +106,6 @@ class App extends React.Component {
 			switch (filterSort) {
 				case '0':
 					filteredProperties.sort((a, b) => a.price - b.price);
-
 					break;
 				case '1':
 					filteredProperties.sort((a, b) => b.price - a.price);

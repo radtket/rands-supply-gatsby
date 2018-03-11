@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 // import GoogleMapsAPI from 'googlemaps';
 const loadGoogleMapsApi = require('load-google-maps-api');
 
-// loadGoogleMapsApi.key = 'AIzaSyAVeoFGD3DxTOzt9uCZPm6eoK9LRU0HYCE';
 const key = {
 	key: 'AIzaSyAVeoFGD3DxTOzt9uCZPm6eoK9LRU0HYCE',
 };
@@ -69,9 +68,10 @@ class GoogleMap extends React.Component {
 
 		loadGoogleMapsApi(key)
 			.then(() => {
+				// eslint-disable-next-line no-undef
 				map = new google.maps.Map(document.getElementById('map'), {
 					center: { lat: latitude, lng: longitude },
-					zoom: 8,
+					zoom: 15,
 				});
 			})
 			.then(() => {
@@ -85,6 +85,7 @@ class GoogleMap extends React.Component {
 		const { markers } = this.state;
 		properties.map(property => {
 			const { latitude, longitude, index, address } = property;
+			// eslint-disable-next-line no-undef
 			this.marker = new google.maps.Marker({
 				position: { lat: latitude, lng: longitude },
 				map,
@@ -100,7 +101,7 @@ class GoogleMap extends React.Component {
 				// },
 				property,
 			});
-
+			// eslint-disable-next-line no-undef
 			const iw = new google.maps.InfoWindow({
 				content: `<h1>${address}</h1>`,
 			});
