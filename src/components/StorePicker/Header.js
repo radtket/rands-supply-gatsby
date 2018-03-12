@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import image from '../../assets/images/house-location-pin.svg';
 import Filter from './Filter';
 
 const Header = ({ filterIsVisible, toggleFilter, handleFilterChange, clearFilter }) => (
 	<header className={`${filterIsVisible ? 'filter-is-visible' : ''}`}>
 		<Filter handleFilterChange={handleFilterChange} toggleFilter={toggleFilter} clearFilter={clearFilter} />
-
-		<img src={image} />
-		<h1>Property Listings</h1>
+		<h1>Store Locations</h1>
 		<button onClick={e => toggleFilter(e)} className="btn-filter">
 			Filter
 		</button>

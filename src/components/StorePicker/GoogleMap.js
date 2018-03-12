@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import GoogleMapsLoader from 'google-maps';
-// import GoogleMapsAPI from 'googlemaps';
+
 const loadGoogleMapsApi = require('load-google-maps-api');
 
 const key = {
@@ -71,7 +70,7 @@ class GoogleMap extends React.Component {
 				// eslint-disable-next-line no-undef
 				map = new google.maps.Map(document.getElementById('map'), {
 					center: { lat: latitude, lng: longitude },
-					zoom: 15,
+					zoom: 5,
 				});
 			})
 			.then(() => {
@@ -80,6 +79,8 @@ class GoogleMap extends React.Component {
 	}
 
 	createMarkers(properties) {
+		// eslint-disable-next-line no-undef
+		const bounds = new google.maps.LatLngBounds();
 		const { setActiveProperty, activeProperty } = this.props;
 		const activePropertyIndex = activeProperty.index;
 		const { markers } = this.state;
@@ -90,7 +91,7 @@ class GoogleMap extends React.Component {
 				position: { lat: latitude, lng: longitude },
 				map,
 				label: {
-					color: 'red',
+					color: '#FFF',
 					text: `${index + 1}`,
 				},
 				// icon: {
@@ -110,6 +111,8 @@ class GoogleMap extends React.Component {
 
 			markers.push(this.marker);
 
+			bounds.extend(this.marker.getPosition());
+
 			// show active property info window
 			this.showIW(activePropertyIndex);
 
@@ -122,6 +125,7 @@ class GoogleMap extends React.Component {
 
 			return this.marker;
 		});
+		map.fitBounds(bounds);
 	}
 
 	render() {
