@@ -9,6 +9,8 @@ const Card = ({ property, activeProperty, setActiveProperty }) => {
 		<div
 			onClick={() => setActiveProperty(property, false)}
 			id={`card-${index}`}
+			role="menuitem"
+			tabIndex={index}
 			className={`card col-sm-12 col-md-6 col-lg-4 ${property === activeProperty ? 'is-active' : ''}`}
 		>
 			<img src={picture} alt={`picture-${city}`} />

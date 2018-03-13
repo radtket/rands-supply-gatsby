@@ -13,6 +13,23 @@ class GoogleMap extends React.Component {
 		markers: [],
 	};
 
+	componentDidMount() {
+		const { properties, activeProperty } = this.props;
+		const { latitude, longitude } = activeProperty;
+
+		loadGoogleMapsApi(key)
+			.then(() => {
+				// eslint-disable-next-line no-undef
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: { lat: latitude, lng: longitude },
+					zoom: 5,
+				});
+			})
+			.then(() => {
+				this.createMarkers(properties);
+			});
+	}
+
 	componentWillReceiveProps(nextProps) {
 		const { activeProperty, filteredProperties, isFiltering } = nextProps;
 		const { latitude, longitude, index } = activeProperty;
@@ -59,23 +76,6 @@ class GoogleMap extends React.Component {
 		markers.forEach(marker => {
 			marker.iw.close();
 		});
-	}
-
-	componentDidMount() {
-		const { properties, activeProperty } = this.props;
-		const { latitude, longitude } = activeProperty;
-
-		loadGoogleMapsApi(key)
-			.then(() => {
-				// eslint-disable-next-line no-undef
-				map = new google.maps.Map(document.getElementById('map'), {
-					center: { lat: latitude, lng: longitude },
-					zoom: 5,
-				});
-			})
-			.then(() => {
-				this.createMarkers(properties);
-			});
 	}
 
 	createMarkers(properties) {

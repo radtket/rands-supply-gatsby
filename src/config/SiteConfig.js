@@ -17,7 +17,7 @@ module.exports = {
 	dateFormat: 'DD.MM.YYYY',
 
 	// Manifest and Progress color
-	themeColor: '#ef4b4c',
+	themeColor: '#001e3c',
 	backgroundColor: '#f8f8f8',
 
 	// Settings for typography.js

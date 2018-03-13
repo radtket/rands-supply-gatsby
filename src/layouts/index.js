@@ -9,11 +9,16 @@ import '../assets/scss/app.scss';
 
 /* eslint no-unused-expressions: off */
 injectGlobal`
+	html, body{
+		height: 100%;
+		margin: 0;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
   body {
     background: ${palette.BG_COLOR};
     color: ${palette.COLOR};
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   a {
     color: ${palette.LINK_COLOR};
@@ -23,7 +28,13 @@ injectGlobal`
 			text-decoration: none;
 			color: ${palette.LINK_HOVER_COLOR};
 		}
-  }
+		&:focus {
+			outline: 0;
+		}
+	}
+	p {
+		margin: 0 0 ${palette.SMALL_SPACING};
+	}
 `;
 
 const TemplateWrapper = ({ children }) => (

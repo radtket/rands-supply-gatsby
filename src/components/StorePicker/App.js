@@ -34,37 +34,27 @@ class App extends React.Component {
 		this.filterProperties = this.filterProperties.bind(this);
 	}
 
-	handleFilterChange(e) {
-		const { target } = e;
-		const { value, name } = target;
-		this.setState(
-			{
-				[name]: value,
-			},
-			function(params) {
-				// run after state has been set in callback, can also use componentDidUpdate
-				this.filterProperties();
-			}
-		);
-	}
-
-	clearFilter(e, form) {
-		e.preventDefault();
-
+	setActiveProperty(property, scroll = true) {
+		const { index } = property;
 		this.setState({
-			properties: this.state.properties.sort((a, b) => a.index - b.index),
-			filterBedrooms: 'any',
-			filterBathrooms: 'any',
-			filterCars: 'any',
-			filterSort: 'any',
-			priceFrom: 500000,
-			priceTo: 1000000,
-			filteredProperties: [],
-			isFiltering: false,
-			activeProperty: this.state.properties[0],
+			activeProperty: property,
 		});
 
-		form.reset();
+		const target = `#card-${index}`;
+
+		if (scroll) {
+			jump(target, {
+				duration: 800,
+				easing: easeInOutCubic,
+			});
+		}
+	}
+
+	toggleFilter(e) {
+		e.preventDefault();
+		this.setState({
+			filterIsVisible: !this.state.filterIsVisible,
+		});
 	}
 
 	filterProperties() {
@@ -123,27 +113,37 @@ class App extends React.Component {
 		});
 	}
 
-	toggleFilter(e) {
+	clearFilter(e, form) {
 		e.preventDefault();
+
 		this.setState({
-			filterIsVisible: !this.state.filterIsVisible,
+			properties: this.state.properties.sort((a, b) => a.index - b.index),
+			filterBedrooms: 'any',
+			filterBathrooms: 'any',
+			filterCars: 'any',
+			filterSort: 'any',
+			priceFrom: 500000,
+			priceTo: 1000000,
+			filteredProperties: [],
+			isFiltering: false,
+			activeProperty: this.state.properties[0],
 		});
+
+		form.reset();
 	}
 
-	setActiveProperty(property, scroll = true) {
-		const { index } = property;
-		this.setState({
-			activeProperty: property,
-		});
-
-		const target = `#card-${index}`;
-
-		if (scroll) {
-			jump(target, {
-				duration: 800,
-				easing: easeInOutCubic,
-			});
-		}
+	handleFilterChange(e) {
+		const { target } = e;
+		const { value, name } = target;
+		this.setState(
+			{
+				[name]: value,
+			},
+			function(params) {
+				// run after state has been set in callback, can also use componentDidUpdate
+				this.filterProperties();
+			}
+		);
 	}
 
 	render() {
@@ -175,7 +175,7 @@ class App extends React.Component {
 							{isFiltering &&
 								propertiesList.length === 0 && (
 									<p className="warning">
-										<img src={image} />
+										<img src={image} alt="img" />
 										<br />No properties were found.
 									</p>
 								)}

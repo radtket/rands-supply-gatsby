@@ -2,13 +2,13 @@ export const BG_PATTERN = `data:image/svg+xml,%3Csvg width='52' height='26' view
 
 export const BG_COLOR = '#fafafa';
 
-export const COLOR = 'white';
+export const COLOR = '#001e3c';
 
-export const SECONDARY_COLOR = '#b6b6b6';
+export const SECONDARY_COLOR = '#d32f2f';
 
-export const LINK_COLOR = '#ef4b4c';
+export const LINK_COLOR = '#d32f2f';
 
-export const LINK_HOVER_COLOR = '#8c3131';
+export const LINK_HOVER_COLOR = '#9a0007';
 
 // max-width for the index page (header + grid)
 export const MAX_WIDTH = '1600';

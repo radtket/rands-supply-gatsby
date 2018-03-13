@@ -1,22 +1,11 @@
 html {
 	background-color: $viewport-background-color;
-	box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-
-html{
 	overflow-y: scroll;
 	-ms-overflow-style: scrollbar;
-}
-html, body{
-	height: 100%;
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
+	color: $base-font-color;
+	font-family: $base-font-family;
+	font-size: 100%;
+	line-height: $base-line-height;
 }
 
 
