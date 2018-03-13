@@ -16,7 +16,7 @@ const data = {
 			bedrooms: 1,
 			bathrooms: 1,
 			carSpaces: 2,
-			picture: 'https://ihatetomatoes.net/demos/_rw/01-real-estate/tn_property01.jpg',
+			picture: 'https://i.imgur.com/4eRj4Dn.jpg',
 		},
 		{
 			index: 1,

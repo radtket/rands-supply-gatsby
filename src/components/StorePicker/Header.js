@@ -5,7 +5,6 @@ import Filter from './Filter';
 const Header = ({ filterIsVisible, toggleFilter, handleFilterChange, clearFilter }) => (
 	<header className={`${filterIsVisible ? 'filter-is-visible' : ''}`}>
 		<Filter handleFilterChange={handleFilterChange} toggleFilter={toggleFilter} clearFilter={clearFilter} />
-
 		<div className="stores__headline">
 			<h1>Store Locations</h1>
 			<button onClick={e => toggleFilter(e)} className="btn btn-filter">
