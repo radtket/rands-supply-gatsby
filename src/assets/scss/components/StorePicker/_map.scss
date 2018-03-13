@@ -1,0 +1,7 @@
+.mapContainer {
+	@include position(fixed, 0 50% 0 0);
+	z-index: 2;
+	#map {
+		@include size(100%);
+	}
+}

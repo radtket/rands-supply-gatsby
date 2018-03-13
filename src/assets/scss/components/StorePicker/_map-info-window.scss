@@ -1,0 +1,29 @@
+.gm-style-iw {
+  > div {
+    @include outer-container(100%);
+
+    header {
+			border-top: 3px solid $color-red-l;
+			background-color: $color-blue-d;
+			color: $color-white;
+			text-align: center;
+			padding: 4px;
+			> * {
+				margin-bottom: 0;
+			}
+      h3 {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.map-box {
+  height: 200px;
+  width: 300px;
+  background-size: contain;
+}

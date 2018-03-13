@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import loadGoogleMapsApi from 'load-google-maps-api';
+import logoMarker from './images/_MapMarker/marker.png';
+import styles from './data/map-styles';
 
-const loadGoogleMapsApi = require('load-google-maps-api');
-
+const staticMapKey = 'AIzaSyC5TT1pQaF8rS0pxFuGjS_rzaVlcWh_cGo';
 const key = {
 	key: 'AIzaSyAVeoFGD3DxTOzt9uCZPm6eoK9LRU0HYCE',
 };
@@ -23,6 +25,7 @@ class GoogleMap extends React.Component {
 				map = new google.maps.Map(document.getElementById('map'), {
 					center: { lat: latitude, lng: longitude },
 					zoom: 5,
+					styles,
 				});
 			})
 			.then(() => {
@@ -35,7 +38,6 @@ class GoogleMap extends React.Component {
 		const { latitude, longitude, index } = activeProperty;
 
 		// show active property info window
-
 		if (isFiltering && filteredProperties.length === 0) {
 			this.hideAll();
 		} else {
@@ -85,26 +87,41 @@ class GoogleMap extends React.Component {
 		const activePropertyIndex = activeProperty.index;
 		const { markers } = this.state;
 		properties.map(property => {
-			const { latitude, longitude, index, address } = property;
+			const { latitude, longitude, index, city, state, street } = property;
 			// eslint-disable-next-line no-undef
 			this.marker = new google.maps.Marker({
 				position: { lat: latitude, lng: longitude },
 				map,
-				label: {
-					color: '#FFF',
-					text: `${index + 1}`,
-				},
-				// icon: {
-				// 	url: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
-				// 	size: new google.maps.Size(22, 55),
-				// 	origin: new google.maps.Point(0, -15),
-				// 	anchor: new google.maps.Point(11, 52),
+				// label: {
+				// 	color: '#FFF',
+				// 	text: `${index + 1}`,
 				// },
+				// eslint-disable-next-line no-undef
+				animation: google.maps.Animation.DROP,
+				icon: {
+					url: `${logoMarker}`,
+					// eslint-disable-next-line no-undef
+					size: new google.maps.Size(29, 55),
+					// size: new google.maps.Size(22, 55),
+					// origin: new google.maps.Point(0, -15),
+					// anchor: new google.maps.Point(11, 52),
+				},
 				property,
 			});
 			// eslint-disable-next-line no-undef
 			const iw = new google.maps.InfoWindow({
-				content: `<h1>${address}</h1>`,
+				content: `
+				<header>
+					<h3>${city}, ${state}</h3>
+					<h4>${street}</h4>
+				</header>
+				<div class="map-box" style="background: url('${
+					logoMarker
+				}' ) center no-repeat, url(https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${
+					longitude
+				}&zoom=15&size=300x200&key=${staticMapKey})"></div>
+
+				`,
 			});
 
 			this.marker.iw = iw;

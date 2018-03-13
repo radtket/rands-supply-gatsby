@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="Layer_1" inkscape:version="0.91 r13725" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:ns1="http://sozi.baierouge.fr" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104.9 199.2"
+	 style="enable-background:new 0 0 104.9 199.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);stroke:#001E3C;stroke-width:2;}
+	.st1{fill:#FFFFFF;stroke:#001E3C;stroke-width:2.5936;}
+	.st2{fill:#001E3C;}
+	.st3{fill:#D32F2F;}
+	.st4{fill:#FFFFFF;}
+</style>
+<g transform="translate(-47.562 -39.938)">
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="137.7392" y1="202.3594" x2="194.6292" y2="-103.4606" gradientTransform="matrix(1 0 0 -1 -47.562 241.938)">
+		<stop  offset="0" style="stop-color:#D32F2F"/>
+		<stop  offset="0.2864" style="stop-color:#D72B2B;stop-opacity:0.7136"/>
+		<stop  offset="0.5858" style="stop-color:#E31E1E;stop-opacity:0.4142"/>
+		<stop  offset="0.8902" style="stop-color:#F60909;stop-opacity:0.1098"/>
+		<stop  offset="1" style="stop-color:#FF0000;stop-opacity:0"/>
+	</linearGradient>
+	<path class="st0" d="M100,40.9c-28.4,0-51.4,23-51.4,51.4c0,16.9,8.1,31.8,20.7,41.2l31,102.1l29.5-101.4
+		c13.1-9.3,21.6-24.6,21.6-41.9C151.4,64,128.4,40.9,100,40.9L100,40.9z"/>
+	<g>
+		<path class="st1" d="M138.8,92.2c0,21.4-17.4,38.8-38.8,38.8s-38.8-17.4-38.8-38.8S78.6,53.4,100,53.4S138.8,70.8,138.8,92.2z"/>
+		<g>
+			<g>
+				<path class="st2" d="M119.9,68.7l11.4,13.1h-9.1l-7.1-8.4l-36.7,37.4h-9.8l42.1-42.4l4.7-4.7h0.3L119.9,68.7z"/>
+			</g>
+			<path class="st3" d="M122.2,89.5v6.1l-7.4-8.1l-22.9,23.2h-6.1l29.3-29.3L122.2,89.5z"/>
+			<path class="st2" d="M122.2,100.3v3l-7.1-6.7L101,110.7h-3.4l15.8-15.8l1.7-1.7l1.7,1.7L122.2,100.3z"/>
+			<path class="st4" d="M115.2,81.5l7.1,8.1v-7.7l-7.1-8.4l-36.7,37.4h7.4L115.2,81.5z"/>
+			<polygon class="st4" points="91.9,110.7 97.6,110.7 115.2,93.2 122.2,100.3 122.2,95.6 114.8,87.5 			"/>
+		</g>
+	</g>
+</g>
+</svg>

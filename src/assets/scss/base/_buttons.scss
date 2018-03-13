@@ -28,10 +28,10 @@ $_button-background-color-hover: shade($action-color, 20%);
 		color: contrast-switch($_button-background-color-hover);
 	}
 
-	&:focus {
-		// outline: $focus-outline;
-		// outline-offset: $focus-outline-offset;
-	}
+	// &:focus {
+	// 	outline: $focus-outline;
+	// 	outline-offset: $focus-outline-offset;
+	// }
 
 	&:disabled {
 		cursor: not-allowed;

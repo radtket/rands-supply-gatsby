@@ -58,16 +58,7 @@ class App extends React.Component {
 	}
 
 	filterProperties() {
-		const {
-			properties,
-			filterBedrooms,
-			filterBathrooms,
-			filterCars,
-			filterSort,
-			priceFrom,
-			priceTo,
-			propertiesList,
-		} = this.state;
+		const { properties, filterBedrooms, filterBathrooms, filterCars, filterSort, priceFrom, priceTo } = this.state;
 
 		const isFiltering =
 			filterBedrooms !== 'any' ||
@@ -100,6 +91,7 @@ class App extends React.Component {
 				case '1':
 					filteredProperties.sort((a, b) => b.price - a.price);
 					break;
+				default:
 			}
 
 			return filteredProperties;
@@ -139,7 +131,7 @@ class App extends React.Component {
 			{
 				[name]: value,
 			},
-			function(params) {
+			function() {
 				// run after state has been set in callback, can also use componentDidUpdate
 				this.filterProperties();
 			}
@@ -147,8 +139,7 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { properties, activeProperty, filterIsVisible, filteredProperties, isFiltering, filterSort } = this.state;
-
+		const { properties, activeProperty, filterIsVisible, filteredProperties, isFiltering } = this.state;
 		const propertiesList = isFiltering ? filteredProperties : properties;
 
 		return (
@@ -167,7 +158,7 @@ class App extends React.Component {
 							{propertiesList.map(property => (
 								<Card
 									activeProperty={activeProperty}
-									key={property._id}
+									key={property.storeNumber}
 									property={property}
 									setActiveProperty={this.setActiveProperty}
 								/>

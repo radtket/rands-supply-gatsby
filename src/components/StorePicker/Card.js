@@ -4,18 +4,19 @@ import config from '../../config/SiteConfig';
 
 const Card = ({ property, activeProperty, setActiveProperty }) => {
 	const {
-		price,
-		bedrooms,
-		bathrooms,
-		carSpaces,
-		address,
-		city,
 		picture,
 		index,
+		street,
+		city,
 		state,
 		zip,
 		phone,
 		phoneFormated,
+		fax,
+		faxFormated,
+		storeManager,
+		storeOpened,
+		storeNumber,
 	} = property;
 
 	return (
@@ -30,10 +31,13 @@ const Card = ({ property, activeProperty, setActiveProperty }) => {
 				<img src={picture} alt={`${config.name} ${city}`} />
 			</figure>
 			<div className="details">
-				<h3 className="store__city">{city}</h3>
-				<span className="index">{index + 1}</span>
+				<h3 className="store__city">
+					{city}
+					<small> {storeOpened}</small>
+				</h3>
+				<span className="index">{storeNumber}</span>
 				<address className="store__address">
-					{address}
+					{`${street}`}
 					<br />
 					{`${city}, ${state} ${zip}`}
 				</address>
@@ -61,38 +65,52 @@ const Card = ({ property, activeProperty, setActiveProperty }) => {
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.73 31.73">
 								<path d="M0 29.66h2.537V9.571H0V29.66zM28.549 9.571V.917H15.871v8.654H10.91v20.09h20.82V9.571h-3.181zm-8.926 15.908h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.516 7.9h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.513 7.9h-2.445v-2.446h2.445v2.446zm0-4.045h-2.445V18.99h2.445v2.444zm0-3.855h-2.445v-2.446h2.445v2.446zm1.506-4.574H14.26V10.84h1.611v1.082h12.678V10.84h1.609v2.165zM3.535 30.813h6.398V7.332H3.535v23.481zm23.33-27.486h-9.029V2.48h9.029v.847zm0 2.256h-9.029v-.844h9.029v.844z" />
 							</svg>
-							<a href={`fax:+1${phoneFormated}`} rel="nofollow">
-								{phone}
+							<a href={`fax:+1${faxFormated}`} rel="nofollow">
+								{fax}
 							</a>
 						</span>
 					</li>
 				</ul>
 				<dl className="store__manager">
 					<dt>Store Manager</dt>
-					<dd>Alan Shufelberger</dd>
+					<dd>{storeManager}</dd>
 				</dl>
-				{/* <ul className="features">
-					<li className="icon-bed">
-						{bedrooms}
-						<span>bedrooms</span>
-					</li>
-					<li className="icon-bath">
-						{bathrooms}
-						<span>bathrooms</span>
-					</li>
-					<li className="icon-car">
-						{carSpaces}
-						<span>parking spots</span>
-					</li>
-				</ul> */}
 			</div>
 		</div>
 	);
 };
 
 Card.propTypes = {
-	property: PropTypes.object.isRequired,
-	activeProperty: PropTypes.object.isRequired,
+	property: PropTypes.shape({
+		street: PropTypes.string,
+		city: PropTypes.string,
+		picture: PropTypes.string,
+		index: PropTypes.number,
+		state: PropTypes.string,
+		zip: PropTypes.number,
+		phone: PropTypes.string,
+		phoneFormated: PropTypes.number,
+		fax: PropTypes.string,
+		faxFormated: PropTypes.number,
+		storeManager: PropTypes.string,
+		storeOpened: PropTypes.number,
+		storeNumber: PropTypes.number,
+	}).isRequired,
+	activeProperty: PropTypes.shape({
+		street: PropTypes.string,
+		city: PropTypes.string,
+		picture: PropTypes.string,
+		index: PropTypes.number,
+		state: PropTypes.string,
+		zip: PropTypes.number,
+		phone: PropTypes.string,
+		phoneFormated: PropTypes.number,
+		fax: PropTypes.string,
+		faxFormated: PropTypes.number,
+		storeManager: PropTypes.string,
+		storeOpened: PropTypes.number,
+		storeNumber: PropTypes.number,
+	}).isRequired,
 	setActiveProperty: PropTypes.func.isRequired,
 };
 
