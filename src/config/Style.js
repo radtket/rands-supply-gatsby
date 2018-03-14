@@ -4,20 +4,20 @@ export const BG_COLOR = '#fafafa';
 
 export const COLOR = '#001e3c';
 
-export const SECONDARY_COLOR = '#d32f2f';
+export const SECONDARY_COLOR = '#d74b4b';
 
-export const LINK_COLOR = '#d32f2f';
+export const LINK_COLOR = '#d74b4b';
 
-export const LINK_HOVER_COLOR = '#9a0007';
+export const LINK_HOVER_COLOR = '#a01023';
 
 // Colors
-export const COLOR_RED_L = '#ff6659';
-export const COLOR_RED = '#d32f2f';
-export const COLOR_RED_D = '#9a0007';
+export const COLOR_RED_L = '#ff7d77';
+export const COLOR_RED = '#d74b4b';
+export const COLOR_RED_D = '#a01023';
 
-export const COLOR_BLUE_L = '#304567';
-export const COLOR_BLUE = '#001e3c';
-export const COLOR_BLUE_D = '#000017';
+export const COLOR_BLUE_L = '#61778b';
+export const COLOR_BLUE = '#354b5e';
+export const COLOR_BLUE_D = '#0a2334';
 
 export const COLOR_GRAY_L = '#e7e7e7';
 export const COLOR_GRAY = '#999999';

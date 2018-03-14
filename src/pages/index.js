@@ -1,23 +1,20 @@
 import React from 'react';
 import Root from '../components/Tabs';
+import Footer from '../components/Footer';
 
 import FortyYearsLogo from '../assets/images/branding/logo_40years.png';
 
 const IndexPage = () => (
 	<div>
-		<section className="small-section">
-			<div className="container">
-				<div className="kons">
-					<h4>
-						We’re <span>KONS</span> Construction and<br /> Development
-					</h4>
-					<h2>
-						Perfection is <br /> always <br /> under constuction
-					</h2>
-				</div>
+		<header className="small-section intro-hero">
+			<div className="intro-section">
+				<h2>
+					<small>R&S SUPPLY</small>
+					Your Full Service Roofing<br /> <span>&</span> Building Materials Supplier
+				</h2>
 			</div>
-		</section>
-		<section className="intro-section">
+		</header>
+		<section className="intro-section intro-section__bg">
 			<div className="intro-section__content">
 				<aside>
 					<div className="our-info">
@@ -82,6 +79,7 @@ const IndexPage = () => (
 				</div>
 			</div>
 		</section>
+		<Footer />
 	</div>
 );
 

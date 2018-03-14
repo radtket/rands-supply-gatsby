@@ -6,7 +6,6 @@ import Card from './Card';
 import Header from './Header';
 import GoogleMap from './GoogleMap';
 import { easeInOutCubic } from './utils/Easing';
-import image from '../../assets/images/location-map.svg';
 import '../../assets/scss/app.scss';
 
 class App extends React.Component {
@@ -143,7 +142,16 @@ class App extends React.Component {
 		const propertiesList = isFiltering ? filteredProperties : properties;
 
 		return (
-			<div>
+			<div className="container-full">
+				{/* mapContainer - Start */}
+				<GoogleMap
+					properties={properties}
+					activeProperty={activeProperty}
+					setActiveProperty={this.setActiveProperty}
+					filteredProperties={filteredProperties}
+					isFiltering={isFiltering}
+				/>
+				{/* mapContainer - End */}
 				{/* listings - Start */}
 				<div className="listings">
 					<Header
@@ -166,7 +174,6 @@ class App extends React.Component {
 							{isFiltering &&
 								propertiesList.length === 0 && (
 									<p className="warning">
-										<img src={image} alt="img" />
 										<br />No properties were found.
 									</p>
 								)}
@@ -174,17 +181,6 @@ class App extends React.Component {
 					</div>
 				</div>
 				{/* listings - End */}
-
-				{/* mapContainer - Start */}
-				<GoogleMap
-					properties={properties}
-					activeProperty={activeProperty}
-					setActiveProperty={this.setActiveProperty}
-					filteredProperties={filteredProperties}
-					isFiltering={isFiltering}
-				/>
-
-				{/* mapContainer - End */}
 			</div>
 		);
 	}

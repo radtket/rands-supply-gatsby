@@ -50,10 +50,14 @@ const Header = () => (
 			<NavbarNavWrap>
 				<NavbarNav id="js-navigation-menu" className="show">
 					<NavbarNavItem>
-						<NavbarNavLink to="/">About</NavbarNavLink>
+						<NavbarNavLink exact to="/" activeClassName="active">
+							About
+						</NavbarNavLink>
 					</NavbarNavItem>
 					<NavbarNavItem>
-						<NavbarNavLink to="/store-locations">Locations</NavbarNavLink>
+						<NavbarNavLink exact to="/store-locations" activeClassName="active">
+							Locations
+						</NavbarNavLink>
 					</NavbarNavItem>
 					<NavbarNavItem>
 						<NavbarNavLink to="/credit-dept">Credit Department</NavbarNavLink>
@@ -75,7 +79,7 @@ const Navbar = styled.header`
 	width: 100%;
 	.container {
 		position: relative;
-		z-index: 9999;
+		/* z-index: 9999; */
 	}
 	svg {
 		max-width: 100%;
@@ -191,7 +195,7 @@ const NavbarNavLink = styled(Link)`
     position: relative;
     &::before {
       content: '';
-      background-color: ${palette.COLOR_RED_L};
+      background-color: ${palette.COLOR_RED};
       width: 0%;
       height: 2px;
       transition: all 0.35s ease-out;
@@ -201,6 +205,7 @@ const NavbarNavLink = styled(Link)`
     }
     &:hover,
     &.active {
+			color: ${palette.COLOR_RED};
       &::before {
         width: 100%;
       }
@@ -238,7 +243,7 @@ const TopBar = styled.div`
     position: relative;
   `};
 	svg {
-		fill: ${palette.COLOR_BLUE_L};
+		fill: ${palette.COLOR_BLUE};
 	}
 	a {
 		display: inline-block;

@@ -3,7 +3,7 @@ header.stores__header {
   z-index: 2;
   padding: $base-spacing;
 	background-color: $color-blue;
-	border-top: ($small-spacing / 2) solid $color-red-l;
+	border-top: ($small-spacing / 2) solid $color-blue-l;
 
 	.stores__headline {
     display: flex;

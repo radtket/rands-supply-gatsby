@@ -4,10 +4,13 @@
 }
 
 .intro-section {
-  @extend %page-section;
-	background-color: $color-blue;
-	border-top: 8px solid $color-red;
-	color: $color-white;
+
+	&__bg {
+		@extend %page-section;
+		background-color: $color-blue;
+		border-top: 8px solid $color-red;
+		color: $color-white;
+	}
 
 	@include outer-container(540px);
 	@media (min-width: 768px)  {max-width: 720px;}
@@ -57,19 +60,35 @@
   }
 }
 
-.kons {
-  h4 {
-    font-size: 18px;
-		line-height: 24px;
-		color: $color-red-l;
-    margin-bottom: $base-spacing;
-  }
-
+.intro-hero {
   h2 {
 		color: $color-white;
-    font-size: 72px;
-    font-weight: 700;
-    margin-bottom: 0;
+    font-weight: 600;
+		margin-bottom: 0;
+		font-size: 30px;
+		@include padding(null 2%);
+		@media(min-width: 500px) {
+			font-size: 36px;
+		}
+		@media(min-width: 768px) {
+			font-size: 56px;
+		}
+		@media(min-width: 992px) {
+			font-size: 64px;
+		}
+		@media(min-width: 1170px) {
+			font-size: 72px;
+		}
+		span,
+		small {
+			color: $color-red-l;
+			font-weight: 700;
+		}
+		small {
+			display: block;
+			font-size: 30px;
+			line-height: 1;
+		}
   }
 }
 
@@ -122,6 +141,7 @@
 	}
 	> .container {
 		background-color: $color-blue-l;
+		box-shadow: $box-shadow-card;
 	}
 	&__content {
 		@include span-columns(10);

@@ -1,3 +1,5 @@
+import * as palette from '../../../config/Style';
+
 const styles = [
 	{
 		featureType: 'administrative',
@@ -52,7 +54,7 @@ const styles = [
 				gamma: '1',
 			},
 			{
-				hue: '#d32f2f',
+				hue: `${palette.COLOR_RED}`,
 			},
 			{
 				weight: '0.75',
@@ -67,7 +69,7 @@ const styles = [
 				visibility: 'on',
 			},
 			{
-				color: '#ff6659',
+				color: `${palette.COLOR_RED_L}`,
 			},
 			{
 				saturation: '-59',
@@ -85,7 +87,7 @@ const styles = [
 				visibility: 'on',
 			},
 			{
-				hue: '#d32f2f',
+				hue: `${palette.COLOR_RED}`,
 			},
 			{
 				saturation: '2',
@@ -136,7 +138,7 @@ const styles = [
 		elementType: 'all',
 		stylers: [
 			{
-				color: '#304567',
+				color: `${palette.COLOR_BLUE}`,
 			},
 			{
 				visibility: 'on',
@@ -199,7 +201,7 @@ const styles = [
 // 		elementType: 'geometry.fill',
 // 		stylers: [
 // 			{
-// 				color: '#d32f2f',
+// 				color: `${palette.COLOR_RED}`,
 // 			},
 // 		],
 // 	},
@@ -208,7 +210,7 @@ const styles = [
 // 		elementType: 'geometry.fill',
 // 		stylers: [
 // 			{
-// 				color: '#ff6659',
+// 				color: `${palette.COLOR_RED_L}`,
 // 			},
 // 		],
 // 	},

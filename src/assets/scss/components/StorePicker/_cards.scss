@@ -1,13 +1,14 @@
 .listings {
-  margin-left: 50%;
   position: relative;
-  width: 50%;
+  width: 100%;
 	z-index: 3;
-	border-left: 1px solid $color-blue;
-}
-
-.cards {
-  max-width: 100%;
+	@media(min-width: 992px) {
+		border-left: 1px solid $color-blue;
+		margin-left: 50%;
+		width: 50%;
+		overflow-y: scroll;
+		height: calc(100vh - 92px);
+	}
 }
 
 .cards-list {
@@ -30,7 +31,7 @@
   padding: 10px;
 	position: relative;
 	outline: transparent;
-	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+	box-shadow: $box-shadow-card;
 
   &:hover {
     background-color: $light-gray;
@@ -47,7 +48,7 @@
 
     .index {
 			background-color: $color-red-l;
-			box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+			box-shadow: $box-shadow-button;
     }
 	}
 

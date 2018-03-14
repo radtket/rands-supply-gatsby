@@ -48,7 +48,7 @@ const TemplateWrapper = ({ children }) => (
 		/>
 		<Header />
 		{children()}
-		<Footer  />
+		{/* <Footer /> */}
 	</div>
 );
 
