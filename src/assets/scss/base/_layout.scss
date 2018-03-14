@@ -11,32 +11,19 @@ html {
 
 .page-wrap {
 	@include clearfix;
-	background-color: #03192b;
+	// background-color: #03192b;
+	background-color: $color-blue-d;
 	overflow: hidden;
+	position: relative;
 	&::before {
 		content: '';
 		z-index: 0;
 		background-position: top;
-		// background-image: url('r&s-bg.png');
+		background-image: url('r&s-bg.png');
 		@include position(absolute, 0 0 0 0);
 		@include size(100%);
 	}
 }
-
-// .page-wrap {
-// 	@include clearfix;
-// 	background-color: #03192b;
-// 	position: relative;
-
-// 	&::before {
-// 		content: '';
-// 		z-index: 0;
-// 		background-position: top;
-// 		background-image: url('../assets/img/bg/r&s-bg.jpg');
-// 		@include position(absolute, 0 0 0 0);
-// 		@include size(100%);
-// 	}
-// }
 
 
 

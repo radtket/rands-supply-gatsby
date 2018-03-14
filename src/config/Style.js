@@ -10,6 +10,19 @@ export const LINK_COLOR = '#d32f2f';
 
 export const LINK_HOVER_COLOR = '#9a0007';
 
+// Colors
+export const COLOR_RED_L = '#ff6659';
+export const COLOR_RED = '#d32f2f';
+export const COLOR_RED_D = '#9a0007';
+
+export const COLOR_BLUE_L = '#304567';
+export const COLOR_BLUE = '#001e3c';
+export const COLOR_BLUE_D = '#000017';
+
+export const COLOR_GRAY_L = '#e7e7e7';
+export const COLOR_GRAY = '#999999';
+export const COLOR_GRAY_D = '#333333';
+
 // max-width for the index page (header + grid)
 export const MAX_WIDTH = '1600';
 

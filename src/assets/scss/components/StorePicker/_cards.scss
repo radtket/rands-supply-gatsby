@@ -23,8 +23,8 @@
 .card {
 	@include row;
 	transition: all 0.3s linear;
-  background-color: #fff;
-	border: 3px #fff solid;
+  background-color: $color-white;
+	border: 3px $color-white solid;
 	margin-bottom: $small-spacing;
   cursor: pointer;
   padding: 10px;
@@ -41,7 +41,7 @@
 		border-color: $color-red-l;
 
 		&:hover {
-			background-color: #fff;
+			background-color: $color-white;
 			border-color: $color-red-l;
 		}
 
@@ -67,8 +67,8 @@
 		width: 250px;
 		margin-right: 16px;
 		img {
+			@include margin(null auto);
 			display: block;
-			margin: 0 auto;
 			max-width: 100%;
 			max-width: calc(100%);
 		}

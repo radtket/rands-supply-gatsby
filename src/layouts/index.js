@@ -5,6 +5,9 @@ import { injectGlobal } from 'styled-components';
 import config from '../config/SiteConfig';
 import * as palette from '../config/Style';
 
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 import '../assets/scss/app.scss';
 
 /* eslint no-unused-expressions: off */
@@ -38,13 +41,14 @@ injectGlobal`
 `;
 
 const TemplateWrapper = ({ children }) => (
-	<div>
+	<div className="page-wrap">
 		<Helmet
 			title={config.siteTitleAlt}
 			meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
 		/>
-
+		<Header />
 		{children()}
+		<Footer  />
 	</div>
 );
 
