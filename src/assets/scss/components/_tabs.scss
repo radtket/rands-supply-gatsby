@@ -16,6 +16,18 @@
 	}
 }
 
+.tabs-allstores {
+	display: none;
+	@media(min-width: 768px) {
+		display: block;
+		text-align: right;
+		color: $color-blue-d;
+		&:hover {
+			color: $color-white;
+		}
+	}
+}
+
 .TabPanel {
   flex: 1;
   display: none;

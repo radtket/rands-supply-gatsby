@@ -20,3 +20,52 @@
 
 @import 'components/intro';
 @import 'components/tabs';
+
+
+
+.main {
+  position: absolute;
+  background: $light-gray;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  max-width: 500px;
+  min-width: 200px;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  border: 2px solid $light-gray;
+}
+
+.section.open {
+  .articlewrap {
+    height: 120px;
+  }
+}
+
+.articlewrap {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.sectionhead {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  color: #888;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 15px 20px;
+}
+
+.article {
+  line-height: 1.5;
+  padding: 20px;
+}
