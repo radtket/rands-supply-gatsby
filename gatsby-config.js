@@ -1,16 +1,69 @@
+const autoprefixer = require('autoprefixer');
+const config = require('./src/config/SiteConfig');
+
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
 module.exports = {
+	pathPrefix: config.pathPrefix,
 	siteMetadata: {
-		title: 'Gatsby Default Starter',
+		siteUrl: config.siteUrl + pathPrefix,
 	},
 	plugins: [
-		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-sass`,
-		`gatsby-plugin-styled-components`,
+		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-styled-components',
+		{
+			resolve: 'gatsby-plugin-postcss-sass',
+			options: {
+				postCssPlugins: [autoprefixer()],
+				precision: 8,
+			},
+		},
+		'gatsby-transformer-pdf',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'pdf',
+				path: `${__dirname}/src/assets/documents`,
+			},
+		},
+		{
+			resolve: 'gatsby-remark-external-links',
+			options: {
+				target: '_blank',
+				rel: 'nofollow noopener noreferrer',
+			},
+		},
 		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: ['roboto: 300,400,500,700,900'],
 			},
 		},
+		'gatsby-plugin-sitemap',
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				name: config.siteTitle,
+				short_name: config.siteTitleAlt,
+				description: config.siteDescription,
+				start_url: config.pathPrefix,
+				background_color: config.backgroundColor,
+				theme_color: config.themeColor,
+				display: 'minimal-ui',
+				icons: [
+					{
+						src: '/logos/logo-192x192.png',
+						sizes: '192x192',
+						type: 'image/png',
+					},
+					{
+						src: '/logos/logo-512x512.png',
+						sizes: '512x512',
+						type: 'image/png',
+					},
+				],
+			},
+		},
+		'gatsby-plugin-offline',
 	],
 };
