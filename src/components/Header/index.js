@@ -1,9 +1,17 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { SlideToggle } from 'react-slide-toggle';
 import styled from 'styled-components';
 import { media } from '../../config/Breakpoints';
 import config from '../../config/SiteConfig';
 import * as palette from '../../config/Style';
+
+// PDF Downloads
+import CreditApplication from '../../assets/documents/CreditApplication.pdf';
+import CreditCardAuthorizationForm from '../../assets/documents/CreditCardAuthorizationForm.pdf';
+import JobInformationReport from '../../assets/documents/JobInformationReport.pdf';
+import JointPaymentAgreement from '../../assets/documents/JointPaymentAgreement.pdf';
+import EmploymentApplication from '../../assets/documents/EmploymentApplication.pdf';
 
 import { Facebook, Linkedin, Phone, Email } from '../../utils/icons';
 import { Logo } from '../../utils/logo';
@@ -50,21 +58,57 @@ const Header = () => (
 			<NavbarNavWrap>
 				<NavbarNav id="js-navigation-menu" className="show">
 					<NavbarNavItem>
-						<NavbarNavLink exact to="/" activeClassName="active">
+						<Link className="navbar-nav__link" exact to="/" activeClassName="active">
 							About
-						</NavbarNavLink>
+						</Link>
 					</NavbarNavItem>
 					<NavbarNavItem>
-						<NavbarNavLink exact to="/store-locations" activeClassName="active">
+						<Link className="navbar-nav__link" exact to="/store-locations" activeClassName="active">
 							Locations
-						</NavbarNavLink>
+						</Link>
 					</NavbarNavItem>
 					<NavbarNavItem>
-						<NavbarNavLink to="/credit-dept">Credit Department</NavbarNavLink>
+						<Link className="navbar-nav__link" to="/partners">
+							Vendor Partners
+						</Link>
 					</NavbarNavItem>
-					<NavbarNavItem>
-						<NavbarNavLink to="/partners">Vendor Partners</NavbarNavLink>
-					</NavbarNavItem>
+					<SlideToggle
+						collapsed
+						render={({ onToggle, setCollapsibleElement }) => (
+							<NavbarNavItem className="sub-nav">
+								<buton className="navbar-nav__link" onClick={onToggle} style={{ positon: 'relative' }}>
+									Credit
+								</buton>
+								<ul className="sub-nav__menu" ref={setCollapsibleElement}>
+									<SubNabItem>
+										<a href={CreditApplication} download>
+											Credit Application
+										</a>
+									</SubNabItem>
+									<SubNabItem>
+										<a href={CreditCardAuthorizationForm} download>
+											Credit Card Authorization
+										</a>
+									</SubNabItem>
+									<SubNabItem>
+										<a href={JobInformationReport} download>
+											Job Information Report
+										</a>
+									</SubNabItem>
+									<SubNabItem>
+										<a href={JointPaymentAgreement} download>
+											Joint Payment Agreement
+										</a>
+									</SubNabItem>
+									<SubNabItem>
+										<a href={EmploymentApplication} download>
+											Employment Application
+										</a>
+									</SubNabItem>
+								</ul>
+							</NavbarNavItem>
+						)}
+					/>
 				</NavbarNav>
 			</NavbarNavWrap>
 		</div>
@@ -93,12 +137,12 @@ const NavbarHeader = styled.figure`
 	line-height: 1;
 	font-size: 0;
 	${media.tablet`
-    margin-top: -1.5rem;
+    margin-top: -${palette.BASE_SPACING};
     &::before {
         content: '';
         background-color: #fff;
         z-index: 0;
-        height: 1.5rem;
+        height: ${palette.BASE_SPACING};
         width: 6000px;
         position: absolute;
         top: 0;
@@ -112,7 +156,7 @@ const NavbarHeader = styled.figure`
         height: 0;
         width: 0;
         border-color: transparent transparent transparent #fff;
-        border-width: 1.5rem 0 0 1.5rem;
+        border-width: ${palette.BASE_SPACING} 0 0 ${palette.BASE_SPACING};
         position: absolute;
         top: 0;
         right: -24px;
@@ -125,9 +169,9 @@ const NavbarLogo = styled(Link)`
 	display: inline-block;
 	margin-top: 0.375rem;
 	margin-bottom: 0.375rem;
-	margin-left: 1.5rem;
+	margin-left: ${palette.BASE_SPACING};
 	${media.tablet`
-    margin-top: 1.5rem;
+    margin-top: ${palette.BASE_SPACING};
     margin-bottom: 0;
   `};
 	svg {
@@ -165,6 +209,8 @@ const NavbarNavItem = styled.li`
 	text-align: right;
 	width: 100%;
 	z-index: 9999;
+	font-weight: 500;
+	font-size: 14px;
 	&:first-of-type {
 		border-top: 1px solid ${palette.COLOR_GRAY_L};
 	}
@@ -176,21 +222,18 @@ const NavbarNavItem = styled.li`
     &:first-of-type {
       border-top: 0;
     }
-  `};
-`;
-
-const NavbarNavLink = styled(Link)`
-	color: rgba(51, 51, 51, 0.7);
-	display: block;
-	font-weight: 500;
-	font-size: 14px;
-	padding-right: 1.5rem;
-	padding-left: 1.5rem;
-	&:focus,
-	&:hover {
-		color: #333;
-	}
-	${media.tablet`
+	`};
+	.navbar-nav__link {
+		color: rgba(51, 51, 51, 0.7);
+		display: block;
+		padding-right: ${palette.BASE_SPACING};
+		padding-left: ${palette.BASE_SPACING};
+		cursor: pointer;
+		&:focus,
+		&:hover {
+			color: #333;
+		}
+		${media.tablet`
     display: inline-block;
     position: relative;
     &::before {
@@ -211,6 +254,31 @@ const NavbarNavLink = styled(Link)`
       }
     }
   `};
+	}
+	.sub-nav__menu {
+		overflow: hidden;
+		background-color: ${palette.COLOR_GRAY_L};
+		margin-top: 1px;
+		line-height: 1.5;
+		z-index: 4;
+		position: absolute;
+		right: 0;
+		padding: 1rem ${palette.BASE_SPACING};
+	}
+`;
+
+const SubNabItem = styled.li`
+	padding-bottom: ${palette.SMALL_SPACING};
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+	a {
+		position: relative;
+		z-index: 1;
+		&:hover {
+			color: ${palette.COLOR_BLUE_D};
+		}
+	}
 `;
 
 const MenuButton = styled.a`
@@ -219,8 +287,8 @@ const MenuButton = styled.a`
 	float: right;
 	line-height: 60px;
 	outline: 0;
-	padding-right: 1.5rem;
-	padding-left: 1.5rem;
+	padding-right: ${palette.BASE_SPACING};
+	padding-left: ${palette.BASE_SPACING};
 	&:focus,
 	&:hover {
 		color: #333;
@@ -238,7 +306,7 @@ const TopBar = styled.div`
     display: block;
     height: 30px;
     line-height: 30px;
-    font-size: 0.75rem;
+    font-size: ${palette.SMALL_SPACING};
     background-color: ${palette.COLOR_RED};
     position: relative;
   `};
@@ -263,19 +331,19 @@ const TopBar = styled.div`
 
 const TopBarLeft = styled.nav`
 	float: left;
-	margin-left: 1.5rem;
+	margin-left: ${palette.BASE_SPACING};
 	a:hover {
 		color: ${palette.COLOR_GRAY_L};
 	}
 	svg {
-		height: 0.75rem;
+		height: ${palette.SMALL_SPACING};
 		margin-right: 0.375rem;
 	}
 `;
 
 const TopBarRight = styled.nav`
 	float: right;
-	margin-right: 1.5rem;
+	margin-right: ${palette.BASE_SPACING};
 	svg {
 		transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 		height: 15px;
