@@ -10,62 +10,64 @@
 @import 'base/media';
 @import 'base/tables';
 @import 'base/typography';
-
 @import 'components/StorePicker/map';
 @import 'components/StorePicker/header';
 @import 'components/StorePicker/filter';
 @import 'components/StorePicker/cards';
 @import 'components/StorePicker/buttons';
 @import 'components/StorePicker/map-info-window';
-
 @import 'components/intro';
 @import 'components/tabs';
 
-
-
-.main {
-  position: absolute;
-  background: $light-gray;
-  top: 50%;
-  left: 50%;
-  width: 40%;
-  max-width: 500px;
-  min-width: 200px;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-}
-
-.section {
-  position: relative;
-  width: 100%;
-  border: 2px solid $light-gray;
-}
-
-.section.open {
-  .articlewrap {
-    height: 120px;
+.react-sanfona {
+  @media (min-width: 768px) {
+    max-width: 450px;
   }
 }
 
-.articlewrap {
-  height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease-in-out;
+.react-sanfona-item {
+  &.react-sanfona-item-expanded {
+    .react-sanfona-item-title {
+      color: $color-blue-d;
+      background-color: $color-red;
+
+      &::after {
+        color: $color-white;
+        content: "-";
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+      }
+    }
+  }
 }
 
-.sectionhead {
-  width: 100%;
-  overflow: hidden;
-  background: white;
-  cursor: pointer;
-  font-weight: 700;
-  color: #888;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 15px 20px;
+.react-sanfona-item-title {
+  background-color: $color-white;
+  color: $color-blue;
+  border-bottom: 1px solid rgba(#000, .2);
+  position: relative;
+  @include padding($small-spacing $base-spacing);
+
+  &:hover {
+    background-color: $color-red-l;
+  }
+
+  &::after {
+    content: "+";
+    font-size: 18px;
+    color: $color-blue;
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    transition: -webkit-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+    position: absolute;
+    right: 30px;
+    font-family: monospace;
+  }
 }
 
-.article {
-  line-height: 1.5;
-  padding: 20px;
+.react-sanfona-item-body-wrapper {
+  @include padding($small-spacing $base-spacing);
+  background-color: $light-gray;
+  border-bottom: 1px solid rgba(#000, .2);
 }

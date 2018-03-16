@@ -11,8 +11,10 @@
 .TabList {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: $base-spacing;
 	@media(min-width: 768px) {
 		display: block;
+		margin-bottom: 0;
 	}
 }
 
@@ -26,15 +28,29 @@
 			color: $color-white;
 		}
 	}
+	&__mobile {
+		margin-top: $small-spacing;
+		display: block;
+		text-align: right;
+		color: $color-blue-d;
+		&:hover {
+			color: $color-white;
+		}
+		@media(min-width: 768px) {
+			display: none;
+		}
+	}
 }
 
 .TabPanel {
   flex: 1;
   display: none;
-	padding: 1.5rem 2rem;
 	&.is-active {
 		display: block;
 	}
+	// @media(max-width: 768px) {
+	// 	padding: 1.5rem 2rem;
+	// }
 }
 
 .Tab {

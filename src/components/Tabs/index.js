@@ -7,8 +7,10 @@ import TabList from './TabList';
 import Tab from './Tab';
 import TabPanel from './TabPanel';
 import Button from './Button';
+import TabPanelStoreContact from './TabPanelStoreContact';
 
 import data from '../StorePicker/data/Data';
+import config from '../../config/SiteConfig';
 
 const storesTwoDemsional = [...data.properties]
 	.sort((a, b) => {
@@ -57,18 +59,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'AZ').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -77,18 +79,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'CA').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -97,18 +99,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'ID').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -117,18 +119,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'MT').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -137,18 +139,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'NV').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -157,18 +159,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'OK').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -177,18 +179,18 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'OR').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
@@ -197,23 +199,26 @@ const Root = () => (
 			<TabPanel>
 				<Accordion>
 					{data.properties.filter(item => item.state === 'TX').map((item, i) => (
-						<AccordionItem title={item.city} expanded={i + 1 === 1}>
-							<div>
-								<ul>
-									<li>
-										{`${item.street}`}
-										<br />
-										{`${item.city}, ${item.state} ${item.zip}`}
-									</li>
-									<li>{item.phone}</li>
-									<li>{item.fax}</li>
-								</ul>
-							</div>
+						<AccordionItem title={item.city} expanded={i + 1 === 1} key={item.phoneFormated}>
+							<TabPanelStoreContact
+								name={config.name}
+								street={item.street}
+								city={item.city}
+								state={item.state}
+								zip={item.zip}
+								phone={item.phone}
+								phoneFormated={item.phoneFormated}
+								fax={item.fax}
+								faxFormated={item.faxFormated}
+							/>
 						</AccordionItem>
 					))}
 				</Accordion>
 			</TabPanel>
 		</Tabs>
+		<Link to="/store-locations" className="tabs-allstores__mobile">
+			View All Stores
+		</Link>
 	</div>
 );
 

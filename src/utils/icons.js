@@ -19,6 +19,15 @@ export const Phone = () => (
 	</svg>
 );
 
+export const Fax = () => (
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.165 348.165">
+		<g>
+			<path d="M0 60.58v11.341L174.083 193.19 348.165 71.921V60.58z" />
+			<path d="M174.083 217.356L71.545 145.228 0 95.39v192.195h348.165V95.39l-71.545 49.838z" />
+		</g>
+	</svg>
+);
+
 export const Email = () => (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.165 348.165">
 		<g>

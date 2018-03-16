@@ -51,14 +51,18 @@ const Card = ({ property, activeProperty, setActiveProperty }) => {
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.1 347.3">
 								<path d="M340.3 274.7l-53.8-53.8c-10.7-10.6-28.4-10.3-39.5.8l-27.1 27-5.3-2.9c-17.1-9.5-40.5-22.5-65.2-47.1s-37.7-48.2-47.2-65.3c-1-1.8-1.9-3.6-2.9-5.2l18.2-18.2 8.9-8.9c11.1-11.1 11.4-28.8.7-39.5L73.4 7.8C62.7-2.9 45-2.6 33.9 8.5L18.7 23.8l.4.4a87.5 87.5 0 0 0-12.4 22 86.8 86.8 0 0 0-5.6 22.3C-6 127.4 20.9 181.2 93.9 254.1 194.7 355 276 347.4 279.5 347a90.4 90.4 0 0 0 44.4-18l.3.3 15.4-15.1c11-11.1 11.4-28.8.7-39.5z" />
 							</svg>
-							<a href={`tel:+1${phoneFormated}`} rel="nofollow" name={`Call ${config.name} ${city} at ${phoneFormated}`}>
+							<a
+								href={`tel:+1${phoneFormated}`}
+								rel="nofollow"
+								name={`Call ${config.name} ${city} at ${phoneFormated}`}
+							>
 								{phone}
 							</a>
 						</span>
 					</li>
 					<li itemScope itemType="http://schema.org/faxNumber">
 						<span style={{ display: 'none' }} itemProp="name">
-							{`n ${city}`}
+							{`${config.name} ${city}`}
 						</span>
 						<span style={{ display: 'none' }}>Fax: </span>
 						<span itemProp="faxNumber">
