@@ -1,14 +1,15 @@
 header.stores__header {
-  position: relative;
-  z-index: 2;
-  padding: $base-spacing;
 	background-color: $color-blue;
 	border-top: ($small-spacing / 2) solid $color-blue-l;
+	padding: $base-spacing;
+	position: relative;
+	z-index: 2;
 
 	.stores__headline {
-    display: flex;
-    align-items: center;
+		align-items: center;
+		display: flex;
 		justify-content: space-between;
+
 		h1 {
 			color: $color-white;
 			display: inline-block;

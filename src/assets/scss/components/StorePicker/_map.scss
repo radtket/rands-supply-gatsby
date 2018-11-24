@@ -1,13 +1,16 @@
 .mapContainer {
 	z-index: 2;
+
 	@media(min-width: 992px) {
 		@include position(fixed, 92px 50% 0 0);
 	}
+
 	@media(max-width: 992px) {
-		position: relative;
 		height: 600px;
+		position: relative;
 		width: 100%;
 	}
+
 	#map {
 		@include size(100%);
 	}

@@ -1,42 +1,44 @@
-$transition-easing: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$transition-easing: cubic-bezier(.455, .03, .515, .955);
 
 .filter {
-  background-color: $color-white;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
-  padding: $base-spacing 130px $base-spacing $base-spacing;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transform: translateY(-100%);
-  transition: transform 0.3s $transition-easing;
-  width: 100%;
-  z-index: 3;
-  @media(min-width: 992px) {
-    width: 50%;
-  }
+	background-color: $color-white;
+	box-shadow: 1px 2px 5px rgba($color-black, .2);
+	padding: $base-spacing 130px $base-spacing $base-spacing;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transform: translateY(-100%);
+	transition: transform .3s $transition-easing;
+	width: 100%;
+	z-index: 3;
 
-  .filterBox {
-    display: inline-block;
+	@media(min-width: 992px) {
+		width: 50%;
+	}
+
+	.filterBox {
 		@include margin(null $base-spacing $small-spacing null);
-  }
+		display: inline-block;
+	}
 
-  .btn-filter {
+	.btn-filter {
 		@include position(absolute, $base-spacing $base-spacing null null);
-    background-color: $color-red-l;
+		background-color: $color-red-l;
 
-    &:hover,
-    &:active {
+		&:hover,
+		&:active {
+			background-color: $color-red;
 			color: $color-white;
-      background-color: $color-red;
-    }
-    @media (min-width: 992px) {
-      top: $base-spacing * 2;
-    }
-  }
+		}
+
+		@media (min-width: 992px) {
+			top: $base-spacing * 2;
+		}
+	}
 }
 
 .filter-is-visible {
-  .filter {
-    transform: translateY(0%);
-  }
+	.filter {
+		transform: translateY(0%);
+	}
 }

@@ -1,41 +1,42 @@
 .listings {
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 	z-index: 3;
+
 	@media(min-width: 992px) {
 		border-left: 1px solid $color-blue;
-		margin-left: 50%;
-		width: 50%;
-		overflow-y: scroll;
 		height: calc(100vh - 92px);
+		margin-left: 50%;
+		overflow-y: scroll;
+		width: 50%;
 	}
 }
 
 .cards-list {
 	@include outer-container(100%);
-  background-color: #E1E2E1;
-  padding: $small-spacing;
+	background-color: #E1E2E1;
+	padding: $small-spacing;
 
-  &.is-empty {
-    background-color: $light-gray;
-  }
+	&.is-empty {
+		background-color: $light-gray;
+	}
 }
 
 .card {
 	@include row;
-	transition: all 0.3s linear;
-  background-color: $color-white;
+	background-color: $color-white;
 	border: 3px $color-white solid;
-	margin-bottom: $small-spacing;
-  cursor: pointer;
-  padding: 10px;
-	position: relative;
-	outline: transparent;
 	box-shadow: $box-shadow-card;
+	cursor: pointer;
+	margin-bottom: $small-spacing;
+	outline: transparent;
+	padding: 10px;
+	position: relative;
+	transition: all .3s linear;
 
-  &:hover {
-    background-color: $light-gray;
-    border-color: $light-gray;
+	&:hover {
+		background-color: $light-gray;
+		border-color: $light-gray;
 	}
 
 	&.is-active {
@@ -46,27 +47,28 @@
 			border-color: $color-red-l;
 		}
 
-    .index {
+		.index {
 			background-color: $color-red-l;
 			box-shadow: $box-shadow-button;
-    }
+		}
 	}
 
 	.index {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: $color-white;
+		@include size(24px);
+		@include position(absolute, 0 0 null null);
+		background-color: rgba($color-black, .2);
+		border-radius: 50%;
+		color: $color-white;
 		font-size: 14px;
 		line-height: 24px;
-		border-radius: 50%;
 		text-align: center;
-		@include size(24px)
-		@include position(absolute, 0 0 null null);
-  }
+	}
 
 	.store-img__wrap {
 		float: left;
-		width: 250px;
 		margin-right: 16px;
+		width: 250px;
+
 		img {
 			@include margin(null auto);
 			display: block;
@@ -76,15 +78,16 @@
 	}
 
 	.store__city {
+		color: $color-blue-l;
 		font-size: 24px;
 		font-weight: 700;
+		line-height: 1;
 		margin-bottom: $small-spacing / 2;
-		color: $color-blue-l;
-    line-height: 1;
-    small {
-      font-size: 12px;
-      font-style: italic;
-    }
+
+		small {
+			font-size: 12px;
+			font-style: italic;
+		}
 	}
 
 	.store__address {
@@ -92,34 +95,39 @@
 	}
 
 	.store__contact {
-		line-height: 1;
 		@include margin($small-spacing null ($small-spacing / 2));
+		line-height: 1;
+
 		li {
-			margin-bottom: $small-spacing / 2;
 			display: inline-block;
+			margin-bottom: $small-spacing / 2;
 			margin-right: $base-spacing;
+
 			&:last-of-type {
 				margin-right: 0;
 			}
 		}
+
 		svg {
 			display: inline-block;
-			margin-right: 4px;
-			vertical-align: middle;
 			fill: $color-blue-d;
 			height: 14px;
-			max-width: 100%;
+			margin-right: 4px;
 			max-height: 100%;
+			max-width: 100%;
+			vertical-align: middle;
 		}
 	}
 
 	.store__manager {
 		line-height: 1.2;
+
 		dt {
-      font-size: 12px;
-      font-weight: 400;
+			font-size: 12px;
+			font-weight: 400;
 			text-transform: uppercase;
 		}
+
 		dd {
 			font-weight: 500;
 		}
@@ -127,19 +135,19 @@
 
 	.details {
 		float: left;
+		position: relative;
 		width: calc(100% - 266px);
-    position: relative;
-  }
+	}
 
 }
 
 .warning {
-  font-size: 30px;
-  margin-top: 30%;
-  text-align: center;
+	font-size: 30px;
+	margin-top: 30%;
+	text-align: center;
 
-  img {
-    margin: 0 auto 30px;
-    max-width: 100px;
-  }
+	img {
+		margin: 0 auto 30px;
+		max-width: 100px;
+	}
 }

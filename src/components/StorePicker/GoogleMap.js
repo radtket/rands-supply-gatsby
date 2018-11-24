@@ -115,11 +115,7 @@ class GoogleMap extends React.Component {
 					<h3>${city}, ${state}</h3>
 					<h4>${street}</h4>
 				</header>
-				<div class="map-box" style="background: url('${
-					logoMarker
-				}' ) center no-repeat, url(https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${
-					longitude
-				}&zoom=15&size=300x200&key=${staticMapKey})"></div>
+				<div class="map-box" style="background: url('${logoMarker}' ) center no-repeat, url(https://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=15&size=300x200&key=${staticMapKey})"></div>
 
 				`,
 			});

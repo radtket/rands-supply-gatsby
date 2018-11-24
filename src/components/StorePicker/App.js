@@ -171,12 +171,12 @@ class App extends React.Component {
 									setActiveProperty={this.setActiveProperty}
 								/>
 							))}
-							{isFiltering &&
-								propertiesList.length === 0 && (
-									<p className="warning">
-										<br />No properties were found.
-									</p>
-								)}
+							{isFiltering && propertiesList.length === 0 && (
+								<p className="warning">
+									<br />
+									No properties were found.
+								</p>
+							)}
 						</div>
 					</div>
 				</div>

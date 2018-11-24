@@ -39,10 +39,20 @@ const Header = () => (
 					</a>
 				</TopBarLeft>
 				<TopBarRight>
-					<a href={config.socialMedia[1].url} name={`${config.name} ${config.socialMedia[1].name}`} target="_blank">
+					<a
+						href={config.socialMedia[1].url}
+						name={`${config.name} ${config.socialMedia[1].name}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Linkedin />
 					</a>
-					<a href={config.socialMedia[0].url} name={`${config.name} ${config.socialMedia[0].name}`} target="_blank">
+					<a
+						href={config.socialMedia[0].url}
+						name={`${config.name} ${config.socialMedia[0].name}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Facebook />
 					</a>
 				</TopBarRight>

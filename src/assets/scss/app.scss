@@ -1,73 +1,69 @@
-@import '../../../node_modules/normalize-scss/sass/normalize';
-@import '../../../node_modules/bourbon/core/bourbon';
-@import '../../../node_modules/bourbon-neat/app/assets/stylesheets/neat';
-@import 'base/variables';
-
-@import 'base/buttons';
-@import 'base/forms';
-@import 'base/layout';
-@import 'base/lists';
-@import 'base/media';
-@import 'base/tables';
-@import 'base/typography';
-@import 'components/StorePicker/map';
-@import 'components/StorePicker/header';
-@import 'components/StorePicker/filter';
-@import 'components/StorePicker/cards';
-@import 'components/StorePicker/buttons';
-@import 'components/StorePicker/map-info-window';
-@import 'components/intro';
-@import 'components/tabs';
+@import "../../../node_modules/normalize-scss/sass/normalize";
+@import "../../../node_modules/bourbon/core/bourbon";
+@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
+@import "base/variables";
+@import "base/buttons";
+@import "base/forms";
+@import "base/layout";
+@import "base/lists";
+@import "base/media";
+@import "base/tables";
+@import "base/typography";
+@import "components/StorePicker/map";
+@import "components/StorePicker/header";
+@import "components/StorePicker/filter";
+@import "components/StorePicker/cards";
+@import "components/StorePicker/buttons";
+@import "components/StorePicker/map-info-window";
+@import "components/intro";
+@import "components/tabs";
 
 .react-sanfona {
-  @media (min-width: 768px) {
-    max-width: 450px;
-  }
+	@media (min-width: 768px) {
+		max-width: 450px;
+	}
 }
 
 .react-sanfona-item {
-  &.react-sanfona-item-expanded {
-    .react-sanfona-item-title {
-      color: $color-blue-d;
-      background-color: $color-red;
+	&.react-sanfona-item-expanded {
+		.react-sanfona-item-title {
+			background-color: $color-red;
+			color: $color-blue-d;
 
-      &::after {
-        color: $color-white;
-        content: "-";
-        -webkit-transform: rotate(-360deg);
-        transform: rotate(-360deg);
-      }
-    }
-  }
+			&::after {
+				color: $color-white;
+				content: "-";
+				// -webkit-transform: rotate(-360deg);
+				transform: rotate(-360deg);
+			}
+		}
+	}
 }
 
 .react-sanfona-item-title {
-  background-color: $color-white;
-  color: $color-blue;
-  border-bottom: 1px solid rgba(#000, .2);
-  position: relative;
-  @include padding($small-spacing $base-spacing);
+	@include padding($small-spacing $base-spacing);
+	background-color: $color-white;
+	border-bottom: 1px solid rgba($color-black, .2);
+	color: $color-blue;
+	position: relative;
 
-  &:hover {
-    background-color: $color-red-l;
-  }
+	&:hover {
+		background-color: $color-red-l;
+	}
 
-  &::after {
-    content: "+";
-    font-size: 18px;
-    color: $color-blue;
-    -webkit-transition: -webkit-transform .5s ease-in-out;
-    transition: -webkit-transform .5s ease-in-out;
-    transition: transform .5s ease-in-out;
-    transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
-    position: absolute;
-    right: 30px;
-    font-family: monospace;
-  }
+	&::after {
+		color: $color-blue;
+		content: "+";
+		font-family: monospace;
+		font-size: 18px;
+		position: absolute;
+		right: 30px;
+		transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+	}
 }
 
 .react-sanfona-item-body-wrapper {
-  @include padding($small-spacing $base-spacing);
-  background-color: $light-gray;
-  border-bottom: 1px solid rgba(#000, .2);
+	@include padding($small-spacing $base-spacing);
+	background-color: $light-gray;
+	border-bottom: 1px solid rgba($color-black, .2);
 }

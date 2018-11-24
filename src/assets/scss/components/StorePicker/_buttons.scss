@@ -1,31 +1,30 @@
-
 .btn-filter {
-  background: transparent;
-  border: 1px solid $color-white;
-  border-radius: $base-border-radius;
-  color: $color-white;
-  padding: .5rem 1rem;
-  transition: all 0.3s linear;
+	background: transparent;
+	border: 1px solid $color-white;
+	border-radius: $base-border-radius;
+	color: $color-white;
+	padding: .5rem 1rem;
+	transition: all .3s linear;
 
-  &:hover,
-  &:active {
-    background-color: $color-white;
-    color: $color-blue-l;
-  }
+	&:hover,
+	&:active {
+		background-color: $color-white;
+		color: $color-blue-l;
+	}
 
-  span {
-    display: none;
+	span {
+		display: none;
 
-    @media (min-width: 992px) {
-      display: inline-block;
-    }
-  }
+		@media (min-width: 992px) {
+			display: inline-block;
+		}
+	}
 
-  @media (min-width: 992px) {
-    strong {
-      display: none;
-    }
-  }
+	@media (min-width: 992px) {
+		strong {
+			display: none;
+		}
+	}
 }
 
 .btn-clear {

@@ -18,7 +18,6 @@ module.exports = {
 				precision: 8,
 			},
 		},
-		'gatsby-transformer-pdf',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {

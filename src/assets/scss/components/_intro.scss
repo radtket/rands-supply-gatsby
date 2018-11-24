@@ -1,9 +1,10 @@
-.container-1400{
+.container-1400 {
 	@include outer-container(1400px);
 	@include padding(null 2%);
 }
 
 .intro-section {
+	@include outer-container(540px);
 
 	&__bg {
 		@extend %page-section;
@@ -12,39 +13,49 @@
 		color: $color-white;
 	}
 
-	@include outer-container(540px);
-	@media (min-width: 768px)  {max-width: 720px;}
-	@media (min-width: 992px)  {max-width: 960px;}
-	@media (min-width: 1200px) {max-width: 1170px;}
-	@media (min-width: 1400px) {max-width: 1370px;}
+	@media (min-width: 768px) {
+		max-width: 720px;
+	}
 
+	@media (min-width: 992px) {
+		max-width: 960px;
+	}
 
-  &__content {
+	@media (min-width: 1200px) {
+		max-width: 1170px;
+	}
+
+	@media (min-width: 1400px) {
+		max-width: 1370px;
+	}
+
+	&__content {
 		@include outer-container;
-    padding: 70px 20px;
+		padding: 70px 20px;
 
-    @media (min-width: 768px) {
+		@media (min-width: 768px) {
 			@include padding(95px 100px null);
-    }
+		}
 
-    @media (min-width: 1200px) {
-      padding-bottom: 90px;
-    }
+		@media (min-width: 1200px) {
+			padding-bottom: 90px;
+		}
 
-    aside {
+		aside {
 			margin-bottom: $base-spacing * 2;
-      @media (min-width: 992px) {
-        @include span-columns(5);
+
+			@media (min-width: 992px) {
+				@include span-columns(5);
 			}
 
 			@media (min-width: 1170px) {
-        @include span-columns(4);
-      }
-    }
+				@include span-columns(4);
+			}
+		}
 
-    article {
-      @media (min-width: 992px) {
-        @include span-columns(7);
+		article {
+			@media (min-width: 992px) {
+				@include span-columns(7);
 			}
 
 			@media (min-width: 1170px) {
@@ -54,95 +65,109 @@
 			p {
 				font-size: 16px;
 				line-height: 1.6;
-
 			}
-    }
-  }
+		}
+	}
 }
 
 .intro-hero {
-  h2 {
-		color: $color-white;
-    font-weight: 600;
-		margin-bottom: 0;
-		font-size: 30px;
+	h2 {
 		@include padding(null 2%);
-		@media(min-width: 500px) {
+		color: $color-white;
+		font-size: 30px;
+		font-weight: 600;
+		margin-bottom: 0;
+
+		@media (min-width: 500px) {
 			font-size: 36px;
 		}
-		@media(min-width: 768px) {
+
+		@media (min-width: 768px) {
 			font-size: 56px;
 		}
-		@media(min-width: 992px) {
+
+		@media (min-width: 992px) {
 			font-size: 64px;
 		}
-		@media(min-width: 1170px) {
+
+		@media (min-width: 1170px) {
 			font-size: 72px;
 		}
+
 		span,
 		small {
 			color: $color-red-l;
 			font-weight: 700;
 		}
+
 		small {
 			display: block;
 			font-size: 30px;
 			line-height: 1;
 		}
-  }
+	}
 }
-
 
 .our-info {
 	text-align: center;
+
 	@media (min-width: 992px) {
 		text-align: left;
 	}
+
 	&__wrap {
-		@include size(225px);
-		position: relative;
-		background-color: #fff;
-		border: 1px solid #fff;
-		border-radius: 50%;
-		text-align: center;
 		@include margin(null auto $base-spacing);
+		@include size(225px);
+		background-color: $color-white;
+		border: 1px solid $color-white;
+		border-radius: 50%;
+		position: relative;
+		text-align: center;
+
 		@media (min-width: 992px) {
 			@include margin(null 0 ($base-spacing * 2));
 		}
-		&:before {
-        content: '';
-        height: 100%;
-        display: inline-block;
-        vertical-align: middle;
-		}
-		img {
-			height: auto;
-			max-width: 80%;
-			margin: 0 auto;
+
+		&::before {
+			content: "";
 			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+
+		img {
+			display: inline-block;
+			height: auto;
+			margin: 0 auto;
+			max-width: 80%;
 			vertical-align: middle;
 		}
 	}
+
 	h2 {
 		font-size: 48px;
 		font-weight: 100;
 	}
+
 	p {
 		font-size: 20px;
 	}
 }
 
 .stores-section {
+	margin-top: 70px * -.5;
 	position: relative;
 	z-index: 2;
-	margin-top: 70px * -.5;
+
 	@media (min-width: 1200px) {
 		margin-top: 90px * -.5;
 	}
-	> .container {
+
+	>.container {
 		background-color: $color-blue-l;
 		box-shadow: $box-shadow-card;
 	}
+
 	&__content {
 		@include span-columns(10);
 		@include shift(1);
@@ -150,19 +175,20 @@
 }
 
 .title {
-	font-size: 48px;
-	margin-bottom: $base-spacing * 1.5;
-	font-weight: 100;
-	position: relative;
 	display: inline-block;
+	font-size: 48px;
+	font-weight: 100;
+	margin-bottom: $base-spacing * 1.5;
 	padding-bottom: $small-spacing;
-	&:before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 30%;
-    height: 2px;
-    background-color: #ef4b4c;
-}
+	position: relative;
+
+	&::before {
+		background-color: $color-red-button;
+		content: "";
+		height: 2px;
+		left: 0;
+		position: absolute;
+		top: 100%;
+		width: 30%;
+	}
 }
