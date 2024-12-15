@@ -3,6 +3,7 @@
   "description": "Gatsby default starter",
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "homepage": "https://radtket.github.io/rands-supply-gatsby/",
   "dependencies": {
     "accounting": "^0.4.1",
     "ajv": "^8.17.1",
