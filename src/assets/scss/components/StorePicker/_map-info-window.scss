@@ -1,6 +1,6 @@
 .gm-style-iw {
 	>div {
-		@include outer-container(100%);
+		@include grid-container(100%);
 
 		header {
 			background-color: $color-blue;

@@ -31,11 +31,11 @@ html {
 // Page Sections
 
 .container {
-	@include outer-container;
+	@include grid-container;
 }
 
 .container-full {
-	@include outer-container(100%);
+	@include grid-container(100%);
 	position: relative;
 }
 

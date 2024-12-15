@@ -1,6 +1,6 @@
 @import "../../../node_modules/normalize-scss/sass/normalize";
 @import "../../../node_modules/bourbon/core/bourbon";
-@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
+@import "../../../node_modules/bourbon-neat/core/neat";
 @import "base/variables";
 @import "base/buttons";
 @import "base/forms";
@@ -17,6 +17,35 @@
 @import "components/StorePicker/map-info-window";
 @import "components/intro";
 @import "components/tabs";
+
+html, body{
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #fafafa;
+  color: #001e3c;
+}
+a {
+  color: #d74b4b;
+  transition: color .5s;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: #a01023;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+p {
+  margin: 0 0 12px;
+}
 
 .react-sanfona {
 	@media (min-width: 768px) {

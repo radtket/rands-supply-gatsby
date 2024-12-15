@@ -1,10 +1,10 @@
 .container-1400 {
-	@include outer-container(1400px);
+	@include grid-container(1400px);
 	@include padding(null 2%);
 }
 
 .intro-section {
-	@include outer-container(540px);
+	@include grid-container(540px);
 
 	&__bg {
 		@extend %page-section;
@@ -30,7 +30,7 @@
 	}
 
 	&__content {
-		@include outer-container;
+		@include grid-container;
 		padding: 70px 20px;
 
 		@media (min-width: 768px) {
@@ -45,21 +45,21 @@
 			margin-bottom: $base-spacing * 2;
 
 			@media (min-width: 992px) {
-				@include span-columns(5);
+				@include grid-column(5);
 			}
 
 			@media (min-width: 1170px) {
-				@include span-columns(4);
+				@include grid-column(4);
 			}
 		}
 
 		article {
 			@media (min-width: 992px) {
-				@include span-columns(7);
+				@include grid-column(7);
 			}
 
 			@media (min-width: 1170px) {
-				@include shift(1);
+				@include grid-shift(1);
 			}
 
 			p {
@@ -169,8 +169,8 @@
 	}
 
 	&__content {
-		@include span-columns(10);
-		@include shift(1);
+		@include grid-column(10);
+		@include grid-shift(1);
 	}
 }
 

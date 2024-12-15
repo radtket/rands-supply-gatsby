@@ -13,7 +13,7 @@
 }
 
 .cards-list {
-	@include outer-container(100%);
+	@include grid-container(100%);
 	background-color: #E1E2E1;
 	padding: $small-spacing;
 
@@ -23,7 +23,7 @@
 }
 
 .card {
-	@include row;
+	// @include row;
 	background-color: $color-white;
 	border: 3px $color-white solid;
 	box-shadow: $box-shadow-card;

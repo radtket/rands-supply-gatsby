@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { injectGlobal } from 'styled-components';
-import config from '../config/SiteConfig';
-import * as palette from '../config/Style';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { createGlobalStyle } from "styled-components";
+import config from "../config/SiteConfig";
+import * as palette from "../config/Style";
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-import '../assets/scss/app.scss';
+import "../assets/scss/app.scss";
 
 /* eslint no-unused-expressions: off */
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
 	html, body{
 		height: 100%;
 		margin: 0;
@@ -41,19 +41,23 @@ injectGlobal`
 `;
 
 const TemplateWrapper = ({ children }) => (
-	<div className="page-wrap">
-		<Helmet
-			title={config.siteTitleAlt}
-			meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
-		/>
-		<Header />
-		{children()}
-		{/* <Footer /> */}
-	</div>
+  <div className="page-wrap">
+    <GlobalStyle />
+    <Helmet
+      meta={[
+        { name: "description", content: "Sample" },
+        { name: "keywords", content: "sample, something" },
+      ]}
+      title={config.siteTitleAlt}
+    />
+    <Header />
+    {children()}
+    {/* <Footer /> */}
+  </div>
 );
 
 TemplateWrapper.propTypes = {
-	children: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired,
 };
 
 export default TemplateWrapper;

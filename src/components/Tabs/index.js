@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import { Accordion, AccordionItem } from 'react-sanfona';
 
 import Tabs from './Tabs';

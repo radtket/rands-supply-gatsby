@@ -1,4 +1,4 @@
-const autoprefixer = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 const config = require('./src/config/SiteConfig');
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
@@ -9,15 +9,9 @@ module.exports = {
 		siteUrl: config.siteUrl + pathPrefix,
 	},
 	plugins: [
+		'gatsby-plugin-sass',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-styled-components',
-		{
-			resolve: 'gatsby-plugin-postcss-sass',
-			options: {
-				postCssPlugins: [autoprefixer()],
-				precision: 8,
-			},
-		},
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -25,20 +19,20 @@ module.exports = {
 				path: `${__dirname}/src/assets/documents`,
 			},
 		},
-		{
-			resolve: 'gatsby-remark-external-links',
-			options: {
-				target: '_blank',
-				rel: 'nofollow noopener noreferrer',
-			},
-		},
+		`gatsby-plugin-postcss`,
+		// {
+		// 	resolve: 'gatsby-remark-external-links',
+		// 	options: {
+		// 		target: '_blank',
+		// 		rel: 'nofollow noopener noreferrer',
+		// 	},
+		// },
 		{
 			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: ['roboto: 300,400,500,700,900'],
 			},
 		},
-		'gatsby-plugin-sitemap',
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
